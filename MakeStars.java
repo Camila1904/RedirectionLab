@@ -8,10 +8,10 @@ public class MakeStars {
       String line = n.nextLine();
       for (int i=0; i<line.length();i++) {
         if (line.charAt(i)!= ' ') {
-          System.out.println('*');
+          System.out.print('*');
         }
         else {
-          System.out.println(' ');
+          System.out.print(' ');
         }
       }
       System.out.println();
