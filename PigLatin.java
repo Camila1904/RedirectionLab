@@ -22,6 +22,18 @@ public class PigLatin {
       return (s.substring(1) + s.substring(0,1) + "ay");
     }
   }
+  public static String pigLatinBest(String s) {
+    s = s.toLowerCase();
+    if (!Character.isAlphabetic(s.charAt(0))) {
+      return s;
+    }
+    if (!Character.isAlphabetic(s.charAt(s.length()-1))) {
+      return pigLatin(s.substring(0,s.length()-1)) + s.charAt(s.length()-1);
+    }
+    else {
+      return pigLatin(s);
+    }
+  }
   public static void main(String[] args) {
     System.out.println(PigLatin.pigLatinSimple("mock"));
     System.out.println(PigLatin.pigLatinSimple("pie"));
@@ -32,5 +44,10 @@ public class PigLatin {
     System.out.println(PigLatin.pigLatin("skies"));
     System.out.println(PigLatin.pigLatin("emu"));
     System.out.println(PigLatin.pigLatin("grade"));
+    System.out.println(PigLatin.pigLatinBest("*emu"));
+    System.out.println(PigLatin.pigLatinBest("4chan"));
+    System.out.println(PigLatin.pigLatinBest("fish!"));
+    System.out.println(PigLatin.pigLatinBest("the."));
+    System.out.println(PigLatin.pigLatinBest("amazing%"));
   }
 }
